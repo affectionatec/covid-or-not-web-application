@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Prototyping</title>
+   <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head>
+  <body>
+
+    <div id="container" >
+    
+      <div class="pagetitle">
+        <h1>Covid-or-not</h1>
+      </div>
+    
+      <div>
+
+          <!-- Enter text to process -->
+        <form id="process", method="get" action="{{ url_for('experiment') }}">
+          <label>Run a classification experiment:</label><br />
+          <input type ="submit" name="action" value="Run!" >
+        </form>
+          
+          </br>
+          </br>
+        
+        <form id="process", method="post" action="{{ url_for('retrieve_results') }}">    
+          <label for="retrieve_results">Retrieve information on all experiments conducted so far:</label><br />
+          <input type ="submit" name="action" value="Retrieve!" >
+        </form>
+        
+          </br>
+          </br>
+      
+        <form id="process", method="post" action="{{ url_for('submitted_form') }}">
+          <label for="input_text">Implement a 'covid-or-not' predictor:</label> <input type="text" name="input_text"><br />
+          <input type ="submit" name="action" value="Covid-or-not?" >
+        </form>
+      
+      </div>
+    </div>
+  </body>
+</html>
